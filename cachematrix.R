@@ -1,8 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
+## cachmatrix.R
+## ============
+##      Description:    containts makeCacheMatrix and cachSolve functions code for applying ProgrammingAssignment2 of the
+##                      R Programming John Hopkins specialization
+##
+##
 
-# Write a short comment describing this function
-# 
 # Steps for testing it:
 # ---------------------
 #       source("<YourPathHere>cachematrix.R")           # load code
@@ -16,6 +18,18 @@
 #       x$getinverse()                                  # check for inverse matrix: it's an empty matrix empty because it was restarted in previous step
 #       cacheSolve(x)                                   # calculate inverse matrix again
 #       cacheSolve(x)                                   # recover inverse matrix from cache
+
+
+# makeCacheMatrix:
+# ---------------
+#       Description:    function creates a special "vector", which is really a list containing a function to
+#                               set the value of the matrix
+#                               get the value of the matrix
+#                               set the value of the inverse matrix
+#                               get the value of the inverse matrix
+#
+#       Parameters: a square non singular matrix
+# 
 
 makeCacheMatrix <- function(Mx = matrix()) 
 {
@@ -53,7 +67,14 @@ makeCacheMatrix <- function(Mx = matrix())
 }
 
 
-## Write a short comment describing this function
+# cacheSolve:
+# -----------
+#       Description:    function that calculates the inverse of an input non singular matrix. 
+#                       It calculates it by using the solve() function if it's not found in cache
+#
+#       Parameters: a makeCacheMatrix type variable pointing to a cached matrix
+# 
+
 
 cacheSolve <- function(Mx, ...) 
 {
